@@ -65,7 +65,7 @@ class Dog:
         LIMIT 1
         """
         row=CURSOR.execute(sql,(name,)).fetchone()
-        # return cls.new_from_db(dog)
+        
         if not row:
             return None
 
@@ -113,5 +113,4 @@ class Dog:
             WHERE id=?
         """
         CURSOR.execute(sql,(self.name,self.breed,self.id))
-        
-        CONN.commit()
+       
